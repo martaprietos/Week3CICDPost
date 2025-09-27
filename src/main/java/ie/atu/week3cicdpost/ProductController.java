@@ -1,5 +1,6 @@
 package ie.atu.week3cicdpost;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class ProductController {
     }
 
     @PostMapping("/addproduct")
-    public Product addProduct(@RequestBody Product myProduct) { //create new instance of product
+    public Product addProduct( @Valid @RequestBody Product myProduct) { //create new instance of product, use validation in Product class, do not add if invalid
         myList.add(myProduct); //add each product to the list
         return myProduct;
     }
