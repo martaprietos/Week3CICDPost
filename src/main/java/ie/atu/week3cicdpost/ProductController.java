@@ -22,5 +22,10 @@ public class ProductController {
         myList.add(myProduct); //add each product to the list
         return myProduct;
     }
+
+    @GetMapping("/api/products/count") //return the number of items in the product list
+    public int getProductCount() {
+        return myList.size();
+    }
 }
 
